@@ -17,8 +17,8 @@ variable "public_subnet_cidr" {
     type = map(list(string))
 
     default = {
-        "prod" = ["10.0.1.0/24", "10.0.3.0/24", "10.0.5.0/24", "10.0.7.0/24"]
-        "dev"  = ["10.10.1.0/24", "10.10.3.0/24", "10.10.5.0/24", "10.10.7.0/24"]
+        "prod" = ["10.0.1.0/24", "10.0.3.0/24"]
+        "dev"  = ["10.10.1.0/24", "10.10.3.0/24"]
     }
 }
 
@@ -35,4 +35,13 @@ variable "az" {
     type = list(string)
 
     default = ["us-east-1a", "us-east-1b", "us-east-1c", "us-east-1d", "us-east-1e", "us-east-1f"]
+}
+
+variable "ami" {
+    type = string
+}
+
+variable "instance_type" {
+    type    = string
+    default = "t3.micro"
 }
