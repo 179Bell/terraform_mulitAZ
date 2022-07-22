@@ -7,7 +7,7 @@ variable "name" {
 }
 
 variable "subnet_id" {
-    type = list(string)
+    type = string
 }
 
 variable "security_groups" {
