@@ -39,9 +39,15 @@ variable "az" {
 
 variable "ami" {
     type = string
+    default = "ami-0cff7528ff583bf9a"
 }
 
 variable "instance_type" {
     type    = string
     default = "t3.micro"
+}
+
+variable "domain_name" {
+    type    = string
+    default = "bell-terra.click"
 }

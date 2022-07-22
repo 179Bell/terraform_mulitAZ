@@ -6,14 +6,15 @@ resource "aws_instance" "this" {
     subnet_id                   = var.subnet_id
     associate_public_ip_address = var.association_public_ip_address
     key_name                    = var.key_name
-    iam_instance_profile        = aws_iam_instance_profile.ssm_role.name 
+    iam_instance_profile        = aws_iam_instance_profile.ssm_role.name
+    user_data                   = var.user_data
 
     tags                        = var.tags
 }
 
-##########################
-# EC2 IAM Role
-##########################
+# ##########################
+# # EC2 IAM Role
+# ##########################
 data "aws_iam_policy_document" "ssm_role" {
     statement {
         actions = ["sts:AssumeRole"]
